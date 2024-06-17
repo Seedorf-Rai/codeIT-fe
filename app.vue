@@ -1,6 +1,9 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <template>
+  <h1 class="text-3xl font-bold ">
+    Hello world!
+  </h1>
+</template>
   </div>
 </template>
