@@ -7,5 +7,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules : ['nuxt-icon'],
   css: ['~/assets/css/main.css'],
 })
