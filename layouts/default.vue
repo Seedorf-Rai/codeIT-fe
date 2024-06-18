@@ -6,7 +6,7 @@
           <slot></slot>
         </main>
         <footer>
-            this is footer
+          
         </footer>
     </div>
 </template>
