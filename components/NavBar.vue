@@ -60,6 +60,7 @@ nav{
     position: sticky;
     top: 0;
     background-color: #F9F8FA;
+    z-index: 1000;
 }
 .nav-input::placeholder{
   font-weight: normal !important;
