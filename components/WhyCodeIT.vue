@@ -1,7 +1,7 @@
 <template>
-    <section class="why-code-it xl:px-24 py-16  flex justify-between gap-10">
+    <section class="why-code-it xl:px-28 py-16  flex justify-between gap-10">
         <div>
-            <iframe width="600" height="315" src="https://www.youtube.com/embed/Rne7-hHINFw?si=QnwypS_E2gn1uGVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="620" height="315" src="https://www.youtube.com/embed/Rne7-hHINFw?si=QnwypS_E2gn1uGVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div>
             <h1 class="text-3xl font-bold mb-4">Why Choose Code IT ?</h1>

@@ -1,5 +1,5 @@
 <template>
-    <section class="container  xl:px-24 py-12">
+    <section class="container  xl:px-28 py-12">
       <div class="text-center">
         <div class="flex flex-col justify-center items-center">
           <h1 class="text-3xl font-bold mb-4">Our Internship Partners</h1>

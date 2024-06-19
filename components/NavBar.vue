@@ -12,7 +12,7 @@
       </div>
     <nav >
 
-      <div class="px-24 py-3 flex justify-between items-center gap-8">
+      <div class="px-28 py-3 flex justify-between items-center gap-8">
         <div>
             <img src="https://www.codeit.com.np/storage/01HYTEZP4QQVATVMF33WTG1J4Z.webp" class="w-44" alt="">
             <div class="text-sm">
