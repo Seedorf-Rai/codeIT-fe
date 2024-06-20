@@ -7,5 +7,6 @@
         <Banner></Banner>
         <PopularCourses></PopularCourses>
         <VoiceStds></VoiceStds>
+        <Gallery></Gallery>
     </div>
 </template>

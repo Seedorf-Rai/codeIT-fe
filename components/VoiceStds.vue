@@ -18,9 +18,4 @@
  .voice-stds{
     background-color: #F9F8FA;
  }
- .learn-btn{
-    background-color: #60927B;
-    color: white;
-    border-radius:5px;
- }
 </style>
