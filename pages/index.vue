@@ -6,5 +6,6 @@
         <UpcomingClasses></UpcomingClasses>
         <Banner></Banner>
         <PopularCourses></PopularCourses>
+        <VoiceStds></VoiceStds>
     </div>
 </template>
