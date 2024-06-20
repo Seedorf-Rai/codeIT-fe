@@ -5,6 +5,6 @@
         <WhyCodeIT></WhyCodeIT>
         <UpcomingClasses></UpcomingClasses>
         <Banner></Banner>
-        <X></X>
+        <PopularCourses></PopularCourses>
     </div>
 </template>
