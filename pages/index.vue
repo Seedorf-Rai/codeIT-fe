@@ -8,5 +8,7 @@
         <PopularCourses></PopularCourses>
         <VoiceStds></VoiceStds>
         <Gallery></Gallery>
+        <BlogSection></BlogSection>
+        <ClientSection></ClientSection>
     </div>
 </template>
