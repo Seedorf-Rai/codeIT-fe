@@ -5,9 +5,7 @@
         <main>
           <slot></slot>
         </main>
-        <footer>
-          
-        </footer>
+        <Footer></Footer>
     </div>
 </template>
 

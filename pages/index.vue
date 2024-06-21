@@ -10,5 +10,7 @@
         <Gallery></Gallery>
         <BlogSection></BlogSection>
         <ClientSection></ClientSection>
+        <CareerBanner></CareerBanner>
+        <Location></Location>
     </div>
 </template>
