@@ -14,7 +14,7 @@
 
       <div class="2xl:px-20 lg:px-8 md:px-4 py-3 flex justify-between items-center gap-8">
         <div>
-            <img src="https://www.codeit.com.np/storage/01HYTEZP4QQVATVMF33WTG1J4Z.webp" class="w-44" alt="">
+            <nuxt-link to="/"><img src="https://www.codeit.com.np/storage/01HYTEZP4QQVATVMF33WTG1J4Z.webp" class="w-44" alt=""></nuxt-link>
             <div class="xl:text-sm text-xs">
                 Inspiring Youth Since 2017
             </div>
@@ -25,7 +25,7 @@
   </div>
         <div class=" relative xl:px-3">
             <div class="font-semibold">
-                Upcoming Classes
+                <nuxt-link to="/upcoming-classes">Upcoming Classes</nuxt-link>
             </div>
             <div class="absolute h-5 w-5 flex items-center justify-center bg-yellow-400 rounded  text-white -top-3 right-0">
                 4
