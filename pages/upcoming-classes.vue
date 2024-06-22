@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="cover  h-[50vh] w-full flex justify-center items-center">
+        <div class="cover  h-[60vh] w-full flex justify-center items-center">
            <div class="line"></div>
            <h1 class="font-bold text-white text-3xl">Upcoming Courses</h1>
            <div class="line"></div>

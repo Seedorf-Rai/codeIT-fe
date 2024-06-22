@@ -33,19 +33,25 @@
         </div>
         <div class="font-light text-sm xl:text-base">
             <div>
-                <Icon name="uil:whatsapp" ></Icon>
+                <a href="https://wa.me/9862130505">
+                    <Icon name="uil:whatsapp" ></Icon>
                 9862130505
+                </a>
             </div>
             <div>
+               <a href="tel:025-575163">
                 <Icon name="uil:phone"></Icon>
                 025-575163
+               </a>
             </div>
         </div>
         <div class="flex">
             <button class="px-2 py-1 portal-btn "><span>Student Portal</span></button>
-            <button class="px-2 py-1 enroll-btn ms-2 ">Enroll Now
+            <nuxt-link to="/enroll">
+                <button class="px-2 py-1 enroll-btn ms-2 ">Enroll Now
                 <span><Icon name="uil:arrow-right" size="20"></Icon></span>
             </button>
+            </nuxt-link>
         </div>
 
     </div>
