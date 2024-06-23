@@ -9,9 +9,11 @@
                 Our Mission:
                 At the core of Code IT's philosophy is the mission to provide comprehensive an...
             </p>
-            <button class="px-3 py-2 mt-10 learn-btn  ">Learn More
+            <nuxt-link to="/about-us">
+                <button class="px-3 py-2 mt-10 learn-btn  ">Learn More
                 <span><Icon name="uil:arrow-right" size="20"></Icon></span>
-            </button>
+                </button>
+            </nuxt-link>
         </div>
     </section>
 </template>
