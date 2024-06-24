@@ -6,9 +6,11 @@
             Are you a passionate IT professional with a knack for explaining complex concepts? Do you have a desire to share your knowledge and empower the next generation of tech enthusiasts? Code IT invites dynamic and experienced individuals to join our team as instructors
          </p>
 
-              <button class="px-3 py-2 w-1/3  enroll-btn  ">Apply for an Instructor
+             <nuxt-link to="/apply-for-instructor" class="w-1/3">
+               <button class="px-3 py-2 w-full  enroll-btn  ">Apply for an Instructor
                 <span><Icon name="uil:arrow-right" size="24"></Icon></span>
             </button>
+             </nuxt-link>
 
        </div>
     </section>
