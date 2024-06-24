@@ -6,9 +6,11 @@
             We not only offer career-oriented IT training in Nepal as per industry needs but also assist in successful job placements for deserving students and professionals.
          </p>
 
-              <button class="px-3 py-2 w-1/3  enroll-btn  ">Enroll Now
+              <nuxt-link to="/enroll" class="w-1/3">
+               <button class="px-3 py-2 w-full enroll-btn  ">Enroll Now
                 <span><Icon name="uil:arrow-right" size="20"></Icon></span>
             </button>
+              </nuxt-link>
 
        </div>
     </section>

@@ -1,4 +1,5 @@
 <template>
+  <nuxt-link :to="'/upcoming-classes/'+ course_name">
     <div class="popular-course-card w-full rounded-xl">
        <img class="w-full px-2 py-4" :src="featured" alt="">
        <div class="px-4 pb-4 pt-1">
@@ -7,6 +8,7 @@
          <p class="text-green-600 text-sm mt-1">{{ enrolled_students }} Students</p>
        </div>
     </div>
+  </nuxt-link>
 </template>
 
 <script setup>

@@ -8,7 +8,9 @@
             <VoiceStdCard image="https://www.codeit.com.np/storage/01HQ3SAH8V64WD1S43P7X81X2D.png" name="Angila palung Limbu" address="Dharan" education="BE" ></VoiceStdCard>
         </div>
         <div class="flex mt-4 justify-center">
-           <a href="" class="font-bold text-xl text-green-700">View All <Icon name="uil:arrow-right"></Icon> </a>
+           <nuxt-link class="font-bold text-xl text-green-700" to="/voice-of-students">
+            View All <Icon name="uil:arrow-right"></Icon>
+           </nuxt-link>
         </div>
     </section>
 </template>
