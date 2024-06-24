@@ -7,7 +7,10 @@
            <BlogCard featured="https://www.codeit.com.np/storage/01HNSFS5ATVJMM8ETPSMWJ04Q9.webp" title="How much money does a per..." description="A person working in Developers and Programmers in Nepal typically earns around" created_at="08-Feb-2022" ></BlogCard>
         </div>
         <div class="flex mt-4 justify-center">
-           <a href="" class="font-bold text-xl text-green-700">View All <Icon name="uil:arrow-right"></Icon> </a>
+          
+           <nuxt-link to="/blogs" class="font-bold text-xl text-green-700">
+            View All <Icon name="uil:arrow-right"></Icon>
+           </nuxt-link>
         </div>
     </section>
 </template>

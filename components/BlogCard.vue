@@ -1,10 +1,12 @@
 <template>
     <div class="blog-card rounded overflow-hidden">
-       <img :src="featured" alt="">
+       <nuxt-link :to="'/blogs/'+title">
+        <img :src="featured" alt="">
+       </nuxt-link>
        <div class="py-4 content border-b-2 px-5">
          <p class="title font-bold text-lg mb-3">{{ title }}</p>
          <p class="text-sm text-gray-600 mb-2">{{ description }}</p>
-         <a href="">Read More</a>
+         <nuxt-link :to="'/blogs/'+title">Read More</nuxt-link>
        </div>
        <div class="flex px-5 py-2">
           <Icon name="uil:calendar-alt"></Icon>
