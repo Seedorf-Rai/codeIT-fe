@@ -8,7 +8,10 @@
              <GalleryCard image="https://www.codeit.com.np/storage/01HNSB73X2AWAWAK00VEMV39NQ.webp" title="Certificate Distribution"></GalleryCard>
         </div>
         <div class="flex mt-4 justify-center">
-           <a href="" class="font-bold text-xl text-green-700">View All <Icon name="uil:arrow-right"></Icon> </a>
+
+           <nuxt-link class="font-bold text-xl text-green-700" to="/galleries">
+            View All <Icon name="uil:arrow-right"></Icon>
+           </nuxt-link>
         </div>
     </section>
 </template>
