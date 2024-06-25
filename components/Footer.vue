@@ -27,12 +27,12 @@
          <div>
            <h1 class="pb-2 border-b-2 w-1/2 font-bold text-xl">Quick Links</h1>
            <div class="flex flex-col py-2">
-             <a href="">Home</a>
-             <a href="">About Us</a>
-             <a href="">Gallery</a>
-             <a href="">Blogs</a>
-             <a href="">Events</a>
-             <a href="">Contact Us</a>
+             <NuxtLink to="/">Home</NuxtLink>
+             <NuxtLink to="/about-us">About Us</NuxtLink>
+             <NuxtLink to="/galleries">Gallery</NuxtLink>
+             <NuxtLink to="/blogs">Blogs</NuxtLink>
+             <NuxtLink to="/events">Events</NuxtLink>
+             <NuxtLink to="">Contact</NuxtLink>
            </div>
          </div>
          <div>
