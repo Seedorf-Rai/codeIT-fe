@@ -32,7 +32,7 @@
              <NuxtLink to="/galleries">Gallery</NuxtLink>
              <NuxtLink to="/blogs">Blogs</NuxtLink>
              <NuxtLink to="/events">Events</NuxtLink>
-             <NuxtLink to="">Contact</NuxtLink>
+             <NuxtLink to="/contact">Contact</NuxtLink>
            </div>
          </div>
          <div>
