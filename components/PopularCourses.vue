@@ -10,20 +10,42 @@
             </div>
         </div>
         <div class="grid grid-cols-4 gap-4 mt-10">
-            <PopularCourseCard course_slug="uiux" featured="https://www.codeit.com.np/storage/01HQWMWJ688YZHYWM480XJDS27.webp" course_name="UIUX" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
-            <PopularCourseCard featured="https://www.codeit.com.np/storage/01HQWSEZ4353HF3GP91SX32W45.webp" course_name="Web Designing" course_slug="web-designing" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
-            <PopularCourseCard course_slug="python-training" featured="https://www.codeit.com.np/storage/01HQWMCD2W8F3P8YTGKYS60GD7.webp" course_name="Python Training" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
-            <PopularCourseCard course_slug="python-training" featured="https://www.codeit.com.np/storage/01HQWKTCMF0XSRSH10FXE1G1JV.webp" course_name="Flutter App Training" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
-            <PopularCourseCard course_slug="python-training" featured="https://www.codeit.com.np/storage/01HQWMWJ688YZHYWM480XJDS27.webp" course_name="UIUX" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
-            <PopularCourseCard course_slug="python-training" featured="https://www.codeit.com.np/storage/01HQWMCD2W8F3P8YTGKYS60GD7.webp" course_name="Python Training" price="Rs.999" cost_price="Rs.15000" enrolled_students="9.9K"></PopularCourseCard>
+            <div v-for="course in displayedCourses" :key="course">
+              <PopularCourseCard :course_slug="course.course_slug" :featured="course.featured" :course_name="course.course_name" :price="course.price" :cost_price="course.course_price" enrolled_students="9.9K"></PopularCourseCard>
+            </div>
+
         </div>
         <div class="flex justify-center mt-8">
-            <button class="px-3 py-2 load-more-btn">Load More <Icon name="uil:sync"></Icon> </button>
+            <button v-if="hasMoreItems" @click="loadMoreItems" class="px-3 py-2 load-more-btn">Load More <Icon name="uil:sync"></Icon> </button>
         </div>
     </section>
 </template>
 
 <script setup>
+import {usePopularCourses} from '../store/popular-course.js'
+
+const popularCourses = ref([])
+const displayedCourses = ref([])
+const itemsPerPage = 8
+const currentPage = ref(0)
+const hasMoreItems = ref(true)
+
+const allCourses = usePopularCourses();
+popularCourses.value = allCourses.courses
+const updateDisplayedCourses = () => {
+  const start = currentPage.value * itemsPerPage
+  const end = start + itemsPerPage
+  displayedCourses.value = popularCourses.value.slice(0, end)
+  if (end >= popularCourses.value.length) {
+    hasMoreItems.value = false
+  }
+}
+const loadMoreItems = () => {
+  currentPage.value += 1
+  updateDisplayedCourses()
+}
+updateDisplayedCourses()
+
 </script>
 
 <style scoped>

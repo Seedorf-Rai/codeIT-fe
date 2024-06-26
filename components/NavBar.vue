@@ -14,7 +14,7 @@
 
       <div class="2xl:px-20 lg:px-8 md:px-4 py-3 flex justify-between items-center gap-8">
         <div>
-            <nuxt-link to="/"><img src="https://www.codeit.com.np/storage/01HYTEZP4QQVATVMF33WTG1J4Z.webp" class="w-44" alt=""></nuxt-link>
+            <nuxt-link to="/"><img :src="company.logo" class="w-44" alt=""></nuxt-link>
             <div class="xl:text-sm text-xs">
                 Inspiring Youth Since 2017
             </div>
@@ -35,7 +35,7 @@
             <div>
                 <a href="https://wa.me/9862130505">
                     <Icon name="uil:whatsapp" ></Icon>
-                9862130505
+                {{ company.contact }}
                 </a>
             </div>
             <div>
@@ -57,6 +57,16 @@
     </div>
     </nav>
 </template>
+
+<script setup>
+import {useSettings} from '../store/setting.js'
+
+const settings = useSettings();
+const company = settings.company
+
+// const company = settings.company
+
+</script>
 
 <style >
 *{

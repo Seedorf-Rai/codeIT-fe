@@ -2,11 +2,11 @@
     <section class="footer  xl:px-28 py-12">
        <div class="grid grid-cols-4 pb-5 border-b-gray-200 border-b-2">
          <div>
-           <img src="https://www.codeit.com.np/storage/01HYTEZP4QQVATVMF33WTG1J4Z.webp" class="w-36" alt="">
-           <p class="mt-1">9862130505 , 025-575163</p>
-           <p class="mt-1">info@codeit.com.np</p>
-           <p class="mt-1">Prithvi Path,Dharan</p>
-           <p class="mt-1"><span class="font-bold text-base">Reg No.</span>11757/6371/04</p>
+           <img :src="company.logo" class="w-36" alt="">
+           <p class="mt-1">{{ company.contact }} , 025-575163</p>
+           <p class="mt-1">{{ company.email }}</p>
+           <p class="mt-1">{{ company.address }}</p>
+           <p class="mt-1"><span class="font-bold text-base">Reg No.</span>{{ company.regno }}</p>
            <p class="mt-1"><span class="font-bold text-base">PAN No.</span>602345817</p>
            <p class="mt-1 font-bold text-lg" >We are on</p>
            <div class="flex mt-1">
@@ -57,6 +57,15 @@
        </div>
     </section>
 </template>
+
+<script setup>
+
+import {useSettings} from '../store/setting.js'
+
+const settings = useSettings();
+const company = settings.company
+
+</script>
 
 <style scoped>
  .footer {

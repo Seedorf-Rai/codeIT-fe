@@ -9,5 +9,13 @@
 </template>
 
 <script setup>
- console.log("Layout Page Loaded");
+import {useSettings} from '../store/setting.js'
+import {usePopularCourses} from '../store/popular-course.js'
+
+const company = useSettings();
+const popularCourse = usePopularCourses();
+
+await company.fetchSettings();
+await popularCourse.fetchPopularCourses();
+
 </script>

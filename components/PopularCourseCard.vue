@@ -1,9 +1,10 @@
 <template>
   <nuxt-link :to="'/course/'+course_slug">
     <div class="popular-course-card w-full rounded-xl">
-       <img class="w-full px-2 py-4" :src="featured" alt="">
+       <img class="w-full h-[180px] object-cover px-2 py-4" :src="featured" alt="">
        <div class="px-4 pb-4 pt-1">
-         <p class="text-green-600">{{ course_name }}</p>
+         <p v-if="course_name.length > 24" class="text-green-600">{{ course_name.slice(0,24)+ '...' }}</p>
+         <p v-if="course_name.length < 24" class="text-green-600" >{{ course_name }}</p>
          <p class="text-sm mt-1"><span class="font-bold">Course Fee:</span><span class="new-price ms-1">{{ price }} /-</span><span class="old-price">{{ cost_price }}</span></p>
          <p class="text-green-600 text-sm mt-1">{{ enrolled_students }} Students</p>
        </div>
