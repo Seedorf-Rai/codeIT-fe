@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/upcoming-classes/'+ course_name">
+  <nuxt-link :to="'/course/'+course_slug">
     <div class="popular-course-card w-full rounded-xl">
        <img class="w-full px-2 py-4" :src="featured" alt="">
        <div class="px-4 pb-4 pt-1">
@@ -13,6 +13,7 @@
 
 <script setup>
   defineProps({
+    course_slug: String,
     featured: String,
     course_name: String,
     price : String,
