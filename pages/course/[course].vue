@@ -1,25 +1,45 @@
 <template>
     <div class="px-14 py-8">
-        <p class="px-10 font-light text-gray-600">Home > Framework > Next JS</p>
+        <p class="px-10 font-light text-gray-600">Home > Framework > {{ course.course_name }}</p>
         <div class="grid py-4 grid-cols-3">
            <div class="col-span-2">
-              <img class="course-img w-2/3 h-[250px] object-cover rounded-md " src="https://codeit.com.np/storage/01HQWKZFH552YDYG4SZC7WC75M.webp" alt="">
+              <img class="course-img w-2/3 h-[250px] object-cover rounded-md " :src="course.featured" alt="">
               <div class="pb-2 px-10 title my-10 ">
-                <h1 class="font-bold text-3xl py-4 border-b-2 ">Next JS</h1>
+                <h1 class="font-bold text-3xl py-4 border-b-2 ">{{ course.course_name }}</h1>
                 <div class="flex justify-between py-2">
-                    <p><span class="font-bold">Duration: </span>14 Days</p>
-                    <p><span class="font-bold">Course Fee: </span>Rs.999 /- <span class="line-through text-red-500"  >Rs.16500</span></p>
+                    <p><span class="font-bold">Duration: </span>{{ course.duration }}</p>
+                    <p><span class="font-bold">Course Fee: </span> {{ course.price }} /- <span class="line-through text-red-500"  >{{ course.cost_price }}</span></p>
                 </div>
               </div>
-              <div class="px-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus dolor, molestiae modi voluptatibus incidunt mollitia doloremque voluptatem consequuntur eligendi qui saepe pariatur totam perspiciatis sunt obcaecati labore quas laborum eos officiis harum consequatur illo ipsa tempore? Natus fuga possimus nesciunt. Temporibus sunt velit omnis non. Fugit qui, at excepturi totam animi rerum voluptates ullam minus culpa nam sapiente dolorum asperiores consequatur quas provident tempore. Quo et aliquid magnam expedita, accusantium aliquam reiciendis quis? Cumque ratione ex aliquid hic facere vero rem dolore fugiat voluptatum deleniti incidunt, optio explicabo quo alias et soluta dolor tempora. Porro odio minima sequi nobis ullam.
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, possimus cupiditate. Ex adipisci, possimus amet, incidunt, aut facere veritatis recusandae quasi quia non culpa? Nemo libero sapiente qui nisi mollitia ducimus obcaecati aspernatur rerum quidem eaque laborum at, ipsam consequatur, soluta eum quam, animi atque praesentium. Consequuntur iusto blanditiis nostrum, sunt excepturi perferendis suscipit eveniet, quas quasi eos praesentium ut culpa, commodi iure nam mollitia optio asperiores vero voluptate velit harum? Vero voluptatem, eum nihil nostrum sed labore explicabo reiciendis ratione doloremque, omnis quam velit perferendis rem quas, odio id vitae consectetur dicta eaque architecto natus. Omnis veritatis pariatur quo!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, aspernatur sequi sunt iusto delectus facilis dolorem explicabo temporibus consectetur exercitationem veniam aliquam ratione possimus ipsam perspiciatis fugiat optio nobis iste officiis at qui maxime nulla quos. Soluta blanditiis quidem accusamus quos consequatur porro veniam eligendi saepe labore ab odio quae voluptates nam, quas expedita dolor provident magni voluptatum, distinctio qui? Tempora, libero quam exercitationem quas aut expedita nostrum, deleniti, accusantium enim delectus recusandae temporibus nobis nam eaque minima? Ratione, quasi facilis? Placeat ea suscipit molestiae ex animi harum! Earum, officiis fuga molestias laudantium laboriosam nulla! Ex, fuga minima rerum iusto molestiae praesentium! Distinctio inventore beatae dolorem, enim, maiores neque tempora commodi, animi repellendus consequatur excepturi. Rem laboriosam quis corrupti voluptas nam minus, veniam eaque tenetur ea eos dicta. Vitae rerum delectus repellat id qui, in vero natus totam nobis, tempore voluptatum enim autem ipsum ratione neque sit maxime perferendis ea? Voluptate earum perspiciatis debitis nesciunt saepe at totam! Nam maxime at veniam molestiae saepe, labore, asperiores, fugit possimus autem consequatur consectetur temporibus provident nisi assumenda animi. Nesciunt magni, libero voluptatem doloremque, corporis quia ipsa consectetur culpa voluptate dolores quod quibusdam, possimus laborum ullam repellat dicta fugit dolor voluptates reiciendis sapiente.
-                </p>
-              </div>
+              <div class="px-10" v-html="course.description"></div>
+               <div class="px-10">
+                 <h1 v-if="course.what_you_will_learn" class="font-semibold text-2xl mt-10">What you will Learn</h1>
+                 <div v-if="course.what_you_will_learn" class="grid grid-cols-2 gap-10 py-4">
+                    <div class="flex items-center text-lg" v-for="item in what_you_will_learn" :key="item">
+                        <Icon name="uil:check-circle" class="flex-shrink-0" size="24" ></Icon>
+                        <p class="ms-2 ">{{ item }}
+                        </p>
+                    </div>
+                 </div>
+                 <h1 v-if="course.material_included" class="font-semibold text-2xl mt-10">Materials Included</h1>
+                 <div v-if="course.material_included" class="grid grid-cols-2 gap-10 py-4">
+                    <div class="flex items-center text-lg" v-for="item in materials_included" :key="item" >
+                        <Icon name="uil:check-square" class="flex-shrink-0" size="24" ></Icon>
+                        <p class="ms-2 ">{{ item }}
+                        </p>
+                    </div>
+                 </div>
+                 <h1 v-if="course.requirements" class="font-semibold text-2xl mt-10">Requirements</h1>
+                 <div v-if="course.requirements" class="grid grid-cols-2 gap-10 py-4">
+                    <div class="flex items-center text-lg" v-for="item in requirements" :key="item" >
+                        <Icon name="uil:check-circle" class="flex-shrink-0" size="24" ></Icon>
+                        <p class="ms-2 ">{{ item }}
+                        </p>
+                    </div>
+                 </div>
+               </div>
+               <h1 v-if="course.course_buildse" class="font-semibold px-10 text-2xl mt-10 mb-4">Course Syllabus</h1>
+               <Accordion v-if="course.course_buildse" :course_builds="course.course_builds"></Accordion>
            </div>
            <div class="col-span-1">
               <div class="class-info text-white py-6 rounded-lg px-6">
@@ -77,12 +97,9 @@
             Similar Courses
             </h1>
             <div class="grid grid-cols-4 gap-10 mt-5 px-10">
-
-               <SimilarCourseCard course_name="React JS Frontend Framework" featured="https://codeit.com.np/storage/01HQW5JZ09J2G1XZDM4WRR30X7.webp"></SimilarCourseCard>
-               <SimilarCourseCard course_name="Node JS Training" featured="https://codeit.com.np/storage/01HQWKWZDDH559B4XP1M7GV34B.webp"></SimilarCourseCard>
-               <SimilarCourseCard course_name="Python Django" featured="https://codeit.com.np/storage/01HQWMECTF9XSPE3XS7EHZJPJ1.webp"></SimilarCourseCard>
-               <SimilarCourseCard course_name="Nuxt JS Training" featured="https://codeit.com.np/storage/01HQWMHHT5ZK6YKHWHS7ZTM2K8.webp"></SimilarCourseCard>
-
+               <div v-for="course in course.similar" :key="course">
+                <SimilarCourseCard :course_slug="course.course_slug" :course_name="course.course_name" :featured="course.featured"></SimilarCourseCard>
+               </div>
              </div>
         </div>
     </div>
@@ -92,7 +109,7 @@
     background: white;
     position: sticky;
     top: 90px;
-    z-index: 1000;
+    
 }
 .class-info{
     background-color: #60927B;
@@ -112,5 +129,23 @@ input,select,textarea{
  }
 </style>
 <script setup>
+import {usePopularCourses} from '../../store/popular-course'
+
+function convertParagraphToArray(paragraph) {
+    // Split the paragraph by comma and trim any extra spaces
+    return paragraph.split(',').map(item => item.trim());
+}
+const what_you_will_learn = ref([])
+const materials_included = ref([])
+const requirements = ref([])
+const allCourses = usePopularCourses();
+const req_course = useRoute().params.course;
+
+
+const course = allCourses.courses.find(c => c.course_slug == req_course)
+what_you_will_learn.value = convertParagraphToArray(course.what_you_will_learn)
+materials_included.value = convertParagraphToArray(course.material_included)
+requirements.value = convertParagraphToArray(course.requirements)
+
 
 </script>

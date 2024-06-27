@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link to="">
+    <nuxt-link :to="'/course/'+ course_slug">
         <div class="popular-course-card w-full rounded-xl">
        <img class="w-full px-1 py-2" :src="featured" alt="">
        <div class="pt-1 pb-2">
@@ -11,6 +11,7 @@
 
 <script setup>
   defineProps({
+    course_slug: String,
     featured: String,
     course_name: String
  })
