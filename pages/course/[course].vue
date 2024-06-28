@@ -11,7 +11,7 @@
                     <p><span class="font-bold">Course Fee: </span> {{ course.price }} /- <span class="line-through text-red-500"  >{{ course.cost_price }}</span></p>
                 </div>
               </div>
-              <div class="px-10" v-html="course.description"></div>
+              <div class="px-10 desc" v-html="course.description"></div>
                <div class="px-10">
                  <h1 v-if="course.what_you_will_learn" class="font-semibold text-2xl mt-10">What you will Learn</h1>
                  <div v-if="course.what_you_will_learn" class="grid grid-cols-2 gap-10 py-4">
@@ -38,7 +38,7 @@
                     </div>
                  </div>
                </div>
-               <h1 v-if="course.course_buildse" class="font-semibold px-10 text-2xl mt-10 mb-4">Course Syllabus</h1>
+               <h1 v-if="course.course_builds" class="font-semibold px-10 text-2xl mt-10 mb-4">Course Syllabus</h1>
                <Accordion v-if="course.course_builds" :course_builds="course.course_builds"></Accordion>
            </div>
            <div class="col-span-1">
@@ -105,6 +105,24 @@
     </div>
 </template>
 <style scoped>
+:deep(p) {
+  @apply text-lg;
+  @apply my-2;
+}
+:deep(h2) {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply my-4;
+}
+:deep(h3) {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply my-4;
+}
+:deep(li) {
+  @apply text-lg;
+  @apply my-1
+}
 .title{
     background: white;
     position: sticky;
@@ -126,6 +144,10 @@ input,select,textarea{
     background-color: #60927B;
     color: white;
     border-radius:5px;
+ }
+ .desc p{
+   font-size: 30px !important;
+   font-weight: bold !important;
  }
 </style>
 <script setup>
