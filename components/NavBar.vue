@@ -20,8 +20,14 @@
             </div>
         </div>
         <div class="w-1/3 relative">
-    <input class="w-full nav-input h-11 md:px-5 lg:px-6 border-gray-500  " type="text" placeholder="What do you want to learn today ?">
-    <Icon name="uil:search" class="absolute right-4 top-3 bg-white w-10  " size="18" ></Icon>
+    <form action="">
+        <input list="datalist" class="w-full nav-input h-11 md:px-5 lg:px-6 border-gray-500  " type="text" placeholder="What do you want to learn today ?">
+        <Icon name="uil:search" class="absolute right-4 top-3 bg-white w-10  " size="18" ></Icon>
+    </form>
+    <datalist id="datalist">
+        <option v-for="course in courses" :key="course" :value="course.course_name" :data-slug="course.course_slug" ></option>
+    </datalist>
+
   </div>
         <div class=" relative xl:px-3">
             <div class="font-semibold">
@@ -60,10 +66,12 @@
 
 <script setup>
 import {useSettings} from '../store/setting.js'
+import {usePopularCourses} from '../store/popular-course.js'
 
 const settings = useSettings();
 const company = settings.company
-
+const temp = usePopularCourses();
+const courses = temp.courses
 // const company = settings.company
 
 </script>
