@@ -39,7 +39,7 @@
                  </div>
                </div>
                <h1 v-if="course.course_buildse" class="font-semibold px-10 text-2xl mt-10 mb-4">Course Syllabus</h1>
-               <Accordion v-if="course.course_buildse" :course_builds="course.course_builds"></Accordion>
+               <Accordion v-if="course.course_builds" :course_builds="course.course_builds"></Accordion>
            </div>
            <div class="col-span-1">
               <div class="class-info text-white py-6 rounded-lg px-6">
@@ -109,7 +109,7 @@
     background: white;
     position: sticky;
     top: 90px;
-    
+
 }
 .class-info{
     background-color: #60927B;

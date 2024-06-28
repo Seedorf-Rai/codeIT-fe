@@ -1,6 +1,6 @@
 <template>
     <div class="card w-full rounded-xl ">
-        <NuxtLink :to="`/upcoming-classes/${course_name}`"> <img class="w-full px-2 py-4" :src="image" alt=""></NuxtLink>
+        <NuxtLink :to="'/course/'+ course_slug"> <img class="w-full h-[250px] px-2 py-4" :src="image" alt=""></NuxtLink>
         <div class="px-4 py-5">
             <p><span class="new-price">{{ price }} /-</span><span class="old-price">{{ cost_price }}</span></p>
             <p class="font-bold my-1">{{ course_name }}</p>
@@ -27,6 +27,7 @@
 </template>
 <script setup>
  defineProps({
+    course_slug : String,
     image: String,
     course_name: String,
     cost_price: String,
