@@ -122,6 +122,11 @@
 :deep(li) {
   @apply text-lg;
   @apply my-1
+
+}
+:deep(ul){
+    @apply list-disc;
+    @apply ms-4;
 }
 .title{
     background: white;
