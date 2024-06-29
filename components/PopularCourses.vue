@@ -4,30 +4,45 @@
       <h1 class="text-3xl text-center font-bold mb-4">Popular Courses</h1>
       <div class="relative w-full">
 
+
           <input
-          list="datalist"
+          list="datalist" v-model="search"
           type="text"
           class="w-full rounded-md py-2 px-4"
           placeholder="Search Courses"
         />
+        <button @click="allCourses.fetchSearchedCourses(search)">
+          <div class="absolute z-50 bg-white right-0 border top-0 py-2 px-4">
+          <Icon name="uil:search"></Icon>
+        </div>
+        </button>
+
         <datalist id="datalist">
           <option
-            v-for="course in courses"
+            v-for="course in popularCourses"
             :key="course"
             :value="course.course_name"
             :data-slug="course.course_slug"
           ></option>
         </datalist>
-        <div class="absolute z-50 bg-white right-0 border top-0 py-2 px-4">
-          <Icon name="uil:search"></Icon>
-        </div>
 
       </div>
 
 
 
     </div>
-
+    <div class=" grid grid-cols-4 mt-10 mb-4 " v-if="allCourses.searchedCourses.length > 0 ">
+      <div v-for="course in allCourses.searchedCourses" :key="course">
+        <PopularCourseCard
+          :course_slug="course.course_slug"
+          :featured="course.featured"
+          :course_name="course.course_name"
+          :price="course.price"
+          :cost_price="course.course_price"
+          enrolled_students="9.9K"
+        ></PopularCourseCard>
+      </div>
+    </div>
     <div class="grid grid-cols-4 gap-4 mt-10">
       <div v-for="course in displayedCourses" :key="course">
         <PopularCourseCard
@@ -55,6 +70,7 @@
 <script setup>
 import { usePopularCourses } from "../store/popular-course.js";
 
+const search = ref('')
 const popularCourses = ref([]);
 const displayedCourses = ref([]);
 const itemsPerPage = 8;
@@ -71,11 +87,22 @@ const updateDisplayedCourses = () => {
     hasMoreItems.value = false;
   }
 };
+ async function handleSubmit(){
+  try{
+
+    await allCourses.fetchSearchedCourses(search.value)
+
+  }
+  catch(error) {
+    console.log(error);
+  }
+}
 const loadMoreItems = () => {
   currentPage.value += 1;
   updateDisplayedCourses();
 };
 updateDisplayedCourses();
+
 </script>
 
 <style scoped>

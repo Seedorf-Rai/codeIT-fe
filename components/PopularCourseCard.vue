@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="'/course/'+course_slug">
-    <div class="popular-course-card w-full rounded-xl">
+    <div class="popular-course-card w-[300px] rounded-xl">
        <img class="w-full h-[180px] object-cover px-2 py-4" :src="featured" alt="">
        <div class="px-4 pb-4 pt-1">
          <p v-if="course_name.length > 24" class="text-green-600">{{ course_name.slice(0,24)+ '...' }}</p>
