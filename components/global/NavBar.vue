@@ -68,8 +68,9 @@
 </template>
 
 <script setup>
-import {useSettings} from '../store/setting.js'
-import {usePopularCourses} from '../store/popular-course.js';
+import {useSettings} from '~/store/setting.js'
+import {usePopularCourses} from '~/store/popular-course.js';
+
 
 const navSearch = ref();
 const course_slug = ref()
@@ -90,6 +91,11 @@ nav{
     top: 0;
     background-color: #F9F8FA;
     z-index: 1000;
+}
+@media screen and (max-width: 640px) {
+  nav{
+    position: relative;
+  }
 }
 .nav-input::placeholder{
   font-weight: normal !important;

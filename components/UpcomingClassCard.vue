@@ -1,5 +1,5 @@
 <template>
-    <div class="card w-full rounded-xl ">
+    <div class="card w-full rounded-md ">
         <NuxtLink :to="'/course/'+ course_slug"> <img class="w-full h-[250px] px-2 py-4" :src="image" alt=""></NuxtLink>
         <div class="px-4 py-5">
             <p><span class="new-price">{{ price }} /-</span><span class="old-price">{{ cost_price }}</span></p>
