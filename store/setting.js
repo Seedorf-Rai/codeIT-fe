@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import axiosApi from "~/conf/axios";
 
 export const useSettings = defineStore("settings",{
     state: ()=>{
@@ -11,8 +12,10 @@ export const useSettings = defineStore("settings",{
         async fetchSettings(){
             try{
               this.loading = true;
-              const {data:response} = await useFetch('https://codeit.com.np/api/setting')
-              this.company = response._rawValue.data
+              const response = await axiosApi.get('setting')
+              if(response.status === 200){
+                this.company = response.data.data
+              }
               console.log(this.company);
             }
             catch(err){

@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full d h-10 bg-[url('https://www.codeit.com.np/asset/img/banner.webp')] bg-cover bg-center flex justify-center items-center" >
-          <div class="flex mr-2">
+    <div class="w-full d py-2 flex items-center  flex-col   justify-center    bg-[url('https://www.codeit.com.np/asset/img/banner.webp')] bg-cover bg-center md:flex md:flex-row md:justify-center md:items-center" >
+          <div class="flex tex-center mr-2">
               <Icon name="uil:lightbulb" color="yellow" ></Icon>
               <h2 class="font-bold text-white text-sm">
                 Do you know about Code IT wallet ?
@@ -9,8 +9,8 @@
           <div class="font-light text-white text-sm">
             Register for our online classes to receive upto 2% instant cashback.
           </div>
-      </div>
-    <nav >
+     </div>
+     <nav >
 
       <div class="2xl:px-20 lg:px-8 md:px-4 py-3 flex justify-between items-center gap-8">
         <div>
